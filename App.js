@@ -12,6 +12,7 @@ client.on('ready', async() => {
             }
         }
     }
+    process.exit(0)
 });
 client.login(token);
 
