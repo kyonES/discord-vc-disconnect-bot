@@ -1,15 +1,16 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-const token = '';
-client.on('ready', () => {
+const client = new Discord.Client({intents:[Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS]});
+const token = process.env['DISCORD_TOKEN'];
+client.on('ready', async() => {
     console.log('ready...');
-});
-client.on('message', message => {
-    if (message.author.bot) {
-        return;
-    }
-    if (Date.prototype.getHours() === 3 || Date.prototype.getHours() === 4 || Date.prototype.getHours() === 5 || Date.prototype.getHours() === 6) {
-        message.member.voice.channel.leave()
+    for (const guild of client.guilds.cache.values()) {
+        for (const member of guild.members.cache.values()) {
+            try {
+                await member.voice.disconnect();
+            } catch (e) {
+                console.error(e);
+            }
+        }
     }
 });
 client.login(token);

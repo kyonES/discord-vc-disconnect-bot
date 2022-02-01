@@ -1,0 +1,22 @@
+{
+  "name": "discord-vc-disconnect-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyonES/discord-vc-disconnect-bot.git"
+  },
+  "author": "kyonES",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyonES/discord-vc-disconnect-bot/issues"
+  },
+  "homepage": "https://github.com/kyonES/discord-vc-disconnect-bot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
